@@ -1,0 +1,45 @@
+//===============FOOTER CSS=================//
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto;
+    padding-right: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+    background-color: #a0e097;
+    padding: 5px;
+    border-radius: 50%;
+}

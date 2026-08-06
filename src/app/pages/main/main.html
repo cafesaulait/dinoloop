@@ -1,0 +1,108 @@
+<main>
+  <div class="hero">
+    <h2 class="hero-title">Dinoloop !</h2>
+    <p class="hero-subtitle">Le seul transport en commun fait pour les enfants.</p>
+
+    <section class="recherche-voyage">
+
+    <div class="recherche-voyage-title">
+      <p>Départ</p>
+      <select
+        [(ngModel)]="departureCity"
+        name="departureCity"
+        aria-label="Ville de départ"
+        (change)="onDepartureChange()"
+      >
+        <option value="">Choisir une ville</option>
+        <option *ngFor="let option of departureOptions()" [value]="option.value">{{ option.label }}</option>
+      </select>
+    </div>
+
+    <div class="recherche-voyage-title">
+      <p>Arrivée</p>
+      <select [(ngModel)]="arrivalCity" name="arrivalCity" aria-label="Ville d’arrivée">
+        <option value="">Choisir une ville</option>
+        <option *ngFor="let option of arrivalOptions()" [value]="option.value">{{ option.label }}</option>
+      </select>
+    </div>
+
+    <div class="recherche-voyage-title">
+      <p>Date</p>
+      <input type="date" />
+    </div>
+
+    <div class="recherche-voyage-title">
+      <p>Classe</p>
+      <select>
+        <option>Économique</option>
+        <option>Affaires</option>
+        <option>Première</option>
+      </select>
+    </div>
+
+    <button class="btn-recherche-voyage">Rechercher</button>
+    
+  </section>
+  </div>
+
+  <div class="cartes">
+    <section class="cartes-info" id="nos-lignes">
+      <h2 class="carte-lignes-title">Nos lignes</h2>
+      <img src="/assets/img/carte_lignes.png" alt="Carte des lignes" />
+      <button class="btn-voir-lignes">Voir nos lignes</button>
+    </section>
+
+    <section class="cartes-info" id="prochains-departs">
+      <div class="card-top">
+        <h2>Prochains départs</h2>
+        <div class="select-ville">
+          <label for="departure-city">Ville</label>
+          <select id="departure-city" [(ngModel)]="departureCity">
+            <option value="" disabled selected>Choisir une ville</option>
+            <option *ngFor="let option of departureOptions()" [value]="option.value">{{ option.label }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div *ngIf="departureCity && upcomingDepartures.length; else noDepartures" class="departures-list-wrapper">
+        <table class="departures-table">
+          <tbody>
+            <tr *ngFor="let departure of upcomingDepartures">
+              <td class="departure-time">{{ departure.departureTime }}</td>
+              <td class="departure-route">→ {{ departure.destinationLabel }}</td>
+              <td class="departure-duration">{{ departure.duration }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #noDepartures>
+        <p class="no-departures">Sélectionne une ville pour afficher les prochains départs.</p>
+      </ng-template>
+    </section>
+
+    <section class="cartes-info" id="nos-classes">
+      <h2>Nos classes</h2>
+
+      <div class="cartes-classes">
+        <div class="classes" id="classe-eco">
+          <img src="/assets/img/classe-eco.png" alt="La classe économique">
+          <h3>Classe économique</h3>
+          <p>Pratique et abordable</p>
+        </div>
+
+        <div class="classes" id="classe-affaires">
+          <img src="/assets/img/classe-affaires.png" alt="La classe affaires">
+          <h3>Classe affaires</h3>
+          <p>Travailler en toute sérénité</p>
+        </div>
+
+        <div class="classes" id="classe-premiere">
+          <img src="/assets/img/classe-premiere.png" alt="La première classe">
+          <h3>Première classe</h3>
+          <p>Le meilleur pour vos enfants</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

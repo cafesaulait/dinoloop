@@ -1,0 +1,109 @@
+{
+  "cities": [
+    { "id": "noumea", "name": "Nouméa", "x": 53, "y": 70, "region": "Sud" },
+    { "id": "bourail", "name": "Bourail", "x": 28, "y": 54, "region": "Ouest" },
+    { "id": "la-foa", "name": "La Foa", "x": 22, "y": 42, "region": "Ouest" },
+    { "id": "poindimie", "name": "Poindimié", "x": 74, "y": 46, "region": "Est" },
+    { "id": "yate", "name": "Yaté", "x": 75, "y": 80, "region": "Sud" },
+    { "id": "hienghene", "name": "Hienghène", "x": 83, "y": 30, "region": "Nord-Est" },
+    { "id": "kone", "name": "Koné", "x": 42, "y": 18, "region": "Nord" },
+    { "id": "poum", "name": "Poum", "x": 18, "y": 12, "region": "Nord" },
+    { "id": "koumac", "name": "Koumac", "x": 15, "y": 24, "region": "Nord" },
+    { "id": "canala", "name": "Canala", "x": 61, "y": 38, "region": "Centre" }
+  ],
+  "routes": [
+    {
+      "id": "noumea-bourail",
+      "from": "noumea",
+      "to": "bourail",
+      "line": "Ligne Ouest",
+      "durationMinutes": 105,
+      "distanceKm": 150,
+      "schedules": [
+        { "time": "08:00", "availableSeats": 18, "prices": { "firstClass": 2500, "secondClass": 2000, "thirdClass": 1250 } },
+        { "time": "09:30", "availableSeats": 22, "prices": { "firstClass": 2500, "secondClass": 2000, "thirdClass": 1250 } },
+        { "time": "11:15", "availableSeats": 12, "prices": { "firstClass": 2500, "secondClass": 2000, "thirdClass": 1250 } },
+        { "time": "13:30", "availableSeats": 15, "prices": { "firstClass": 2500, "secondClass": 2000, "thirdClass": 1250 } }
+      ]
+    },
+    {
+      "id": "noumea-la-foa",
+      "from": "noumea",
+      "to": "la-foa",
+      "line": "Ligne Ouest",
+      "durationMinutes": 90,
+      "distanceKm": 120,
+      "schedules": [
+        { "time": "07:45", "availableSeats": 24, "prices": { "firstClass": 2200, "secondClass": 1750, "thirdClass": 1100 } },
+        { "time": "10:00", "availableSeats": 18, "prices": { "firstClass": 2200, "secondClass": 1750, "thirdClass": 1100 } },
+        { "time": "12:20", "availableSeats": 14, "prices": { "firstClass": 2200, "secondClass": 1750, "thirdClass": 1100 } },
+        { "time": "15:10", "availableSeats": 21, "prices": { "firstClass": 2200, "secondClass": 1750, "thirdClass": 1100 } }
+      ]
+    },
+    {
+      "id": "noumea-poindimie",
+      "from": "noumea",
+      "to": "poindimie",
+      "line": "Ligne Est",
+      "durationMinutes": 135,
+      "distanceKm": 220,
+      "schedules": [
+        { "time": "08:40", "availableSeats": 16, "prices": { "firstClass": 3100, "secondClass": 2480, "thirdClass": 1580 } },
+        { "time": "11:00", "availableSeats": 10, "prices": { "firstClass": 3100, "secondClass": 2480, "thirdClass": 1580 } },
+        { "time": "14:25", "availableSeats": 13, "prices": { "firstClass": 3100, "secondClass": 2480, "thirdClass": 1580 } }
+      ]
+    },
+    {
+      "id": "noumea-yate",
+      "from": "noumea",
+      "to": "yate",
+      "line": "Ligne Sud",
+      "durationMinutes": 120,
+      "distanceKm": 190,
+      "schedules": [
+        { "time": "09:10", "availableSeats": 20, "prices": { "firstClass": 2900, "secondClass": 2300, "thirdClass": 1450 } },
+        { "time": "12:00", "availableSeats": 28, "prices": { "firstClass": 2900, "secondClass": 2300, "thirdClass": 1450 } },
+        { "time": "16:15", "availableSeats": 17, "prices": { "firstClass": 2900, "secondClass": 2300, "thirdClass": 1450 } }
+      ]
+    },
+    {
+      "id": "noumea-hienghene",
+      "from": "noumea",
+      "to": "hienghene",
+      "line": "Ligne Nord-Est",
+      "durationMinutes": 175,
+      "distanceKm": 260,
+      "schedules": [
+        { "time": "09:45", "availableSeats": 9, "prices": { "firstClass": 3600, "secondClass": 2900, "thirdClass": 1850 } },
+        { "time": "13:00", "availableSeats": 14, "prices": { "firstClass": 3600, "secondClass": 2900, "thirdClass": 1850 } },
+        { "time": "17:20", "availableSeats": 7, "prices": { "firstClass": 3600, "secondClass": 2900, "thirdClass": 1850 } }
+      ]
+    },
+    {
+      "id": "noumea-kone",
+      "from": "noumea",
+      "to": "kone",
+      "line": "Ligne Nord",
+      "durationMinutes": 155,
+      "distanceKm": 230,
+      "schedules": [
+        { "time": "07:30", "availableSeats": 12, "prices": { "firstClass": 3350, "secondClass": 2680, "thirdClass": 1690 } },
+        { "time": "10:45", "availableSeats": 18, "prices": { "firstClass": 3350, "secondClass": 2680, "thirdClass": 1690 } },
+        { "time": "14:10", "availableSeats": 11, "prices": { "firstClass": 3350, "secondClass": 2680, "thirdClass": 1690 } }
+      ]
+    },
+    {
+      "id": "noumea-poum",
+      "from": "noumea",
+      "to": "poum",
+      "line": "Ligne Nord",
+      "durationMinutes": 210,
+      "distanceKm": 310,
+      "schedules": [
+        { "time": "08:15", "availableSeats": 8, "prices": { "firstClass": 4100, "secondClass": 3250, "thirdClass": 2100 } },
+        { "time": "12:30", "availableSeats": 10, "prices": { "firstClass": 4100, "secondClass": 3250, "thirdClass": 2100 } },
+        { "time": "18:00", "availableSeats": 6, "prices": { "firstClass": 4100, "secondClass": 3250, "thirdClass": 2100 } }
+      ]
+    }
+  ]
+}

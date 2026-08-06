@@ -1,0 +1,290 @@
+//===============MAIN STYLES=================//
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  border-radius: 42px;
+  padding: 3rem 2.5rem 1.5rem;
+  overflow: hidden;
+  background-color: #68CA7F;
+  background-image: url('/assets/img/banniere.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 58% auto;
+}
+
+.hero-title {
+  margin-bottom: 1rem;
+  max-width: 45%;
+  font-size: clamp(2.6rem, 3vw, 5rem);
+  line-height: 0.95;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  max-width: 42%;
+  margin-bottom: 2rem;
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
+  line-height: 1.3;
+}
+
+.recherche-voyage {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  background-color: rgba(246, 246, 7, 0.98);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.recherche-voyage-title {
+  min-width: 0;
+}
+
+.recherche-voyage-title p {
+  margin-bottom: 0.45rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.recherche-voyage select,
+.recherche-voyage input,
+.btn-recherche-voyage {
+  height: 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.recherche-voyage select,
+.recherche-voyage input {
+  min-width: 140px;
+  padding: 0.6rem 0.8rem;
+}
+
+.btn-recherche-voyage {
+  background-color: #FAEB4C;
+  font-weight: bold;
+  color: #000;
+  border: none;
+  padding: 0 1.4rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.cartes {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.cartes-info {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  border-radius: 18px;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+}
+
+#nos-lignes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 18px;
+}
+
+.btn-voir-lignes {
+  border: 1px solid #32AB5B;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #32AB5B;
+  font-size: large;
+  font-weight: bold;
+  max-width: fit-content;
+  padding: 10px;
+}
+
+#prochains-departs {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.select-ville {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 180px;
+}
+
+.select-ville label {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.select-ville select {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.8rem 1rem;
+  background: #ffffff;
+  color: #111;
+  font-weight: 600;
+}
+
+#prochains-departs {
+  display: flex;
+  flex-direction: column;
+}
+
+.departures-list-wrapper {
+  overflow-y: auto;
+  max-height: 260px;
+  padding-right: 0.4rem;
+}
+
+.departures-list-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.departures-list-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+
+.departures-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.85rem;
+}
+
+.departures-table tr {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.departures-table td {
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+.departure-time {
+  width: 5.5rem;
+  font-weight: 700;
+}
+
+.departure-route {
+  color: #2d2d2d;
+}
+
+.departure-duration {
+  text-align: right;
+  color: #616161;
+  width: 5rem;
+}
+
+.no-departures {
+  color: #555;
+  font-size: 0.95rem;
+  padding: 1rem 0;
+}
+
+.cartes-classes {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-top: 1.2rem;
+  overflow-x: auto;
+}
+
+.cartes-classes .classes {
+  flex: 0 0 calc(33.333% - 0.67rem);
+  max-width: 320px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartes-classes .classes:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.08);
+}
+
+.cartes-classes .classes img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.cartes-classes .classes h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.cartes-classes .classes p {
+  margin: 0;
+  color: #4f4f4f;
+  line-height: 1.5;
+}
+
+#classe-eco {
+  border-color: rgba(46, 139, 75, 0.18);
+}
+
+#classe-eco h3 {
+  color: #2e8b4b;
+}
+
+#classe-affaires {
+  border-color: rgba(28, 90, 160, 0.18);
+}
+
+#classe-affaires h3 {
+  color: #1c5aa0;
+}
+
+#classe-premiere {
+  border-color: rgba(219, 109, 22, 0.18);
+}
+
+#classe-premiere h3 {
+  color: #db6d16;
+}
