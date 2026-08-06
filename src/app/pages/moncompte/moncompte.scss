@@ -1,0 +1,80 @@
+.page-shell {
+  padding: 2rem 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-card {
+  padding: 2rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f7f4ff 0%, #eef7ff 100%);
+  box-shadow: 0 12px 30px rgba(24, 31, 72, 0.08);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5d4de6;
+}
+
+.hero-card h2 {
+  margin: 0 0 0.7rem;
+  color: #1d2648;
+  font-size: clamp(1.8rem, 2.3vw, 2.4rem);
+}
+
+.hero-card p {
+  margin: 0;
+  color: #4f5877;
+  line-height: 1.6;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.account-card {
+  padding: 1.2rem;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #eceef8;
+  box-shadow: 0 10px 24px rgba(24, 31, 72, 0.06);
+}
+
+.account-card h3 {
+  margin-top: 0;
+  color: #1d2648;
+}
+
+.account-card p,
+.account-card li {
+  color: #4f5877;
+  line-height: 1.6;
+}
+
+.account-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.account-card button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, #5d4de6 0%, #3b81f6 100%);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+}

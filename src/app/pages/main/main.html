@@ -4,52 +4,50 @@
     <p class="hero-subtitle">Le seul transport en commun fait pour les enfants.</p>
 
     <section class="recherche-voyage">
+      <div class="recherche-voyage-title">
+        <p>Départ</p>
+        <select
+          [(ngModel)]="departureCity"
+          name="departureCity"
+          aria-label="Ville de départ"
+          (change)="onDepartureChange()"
+        >
+          <option value="">Choisir une ville</option>
+          <option *ngFor="let option of departureOptions()" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
 
-    <div class="recherche-voyage-title">
-      <p>Départ</p>
-      <select
-        [(ngModel)]="departureCity"
-        name="departureCity"
-        aria-label="Ville de départ"
-        (change)="onDepartureChange()"
-      >
-        <option value="">Choisir une ville</option>
-        <option *ngFor="let option of departureOptions()" [value]="option.value">{{ option.label }}</option>
-      </select>
-    </div>
+      <div class="recherche-voyage-title">
+        <p>Arrivée</p>
+        <select [(ngModel)]="arrivalCity" name="arrivalCity" aria-label="Ville d’arrivée">
+          <option value="">Choisir une ville</option>
+          <option *ngFor="let option of arrivalOptions()" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
 
-    <div class="recherche-voyage-title">
-      <p>Arrivée</p>
-      <select [(ngModel)]="arrivalCity" name="arrivalCity" aria-label="Ville d’arrivée">
-        <option value="">Choisir une ville</option>
-        <option *ngFor="let option of arrivalOptions()" [value]="option.value">{{ option.label }}</option>
-      </select>
-    </div>
+      <div class="recherche-voyage-title">
+        <p>Date</p>
+        <input type="date" />
+      </div>
 
-    <div class="recherche-voyage-title">
-      <p>Date</p>
-      <input type="date" />
-    </div>
+      <div class="recherche-voyage-title">
+        <p>Classe</p>
+        <select>
+          <option>Économique</option>
+          <option>Affaires</option>
+          <option>Première</option>
+        </select>
+      </div>
 
-    <div class="recherche-voyage-title">
-      <p>Classe</p>
-      <select>
-        <option>Économique</option>
-        <option>Affaires</option>
-        <option>Première</option>
-      </select>
-    </div>
-
-    <button class="btn-recherche-voyage">Rechercher</button>
-    
-  </section>
+      <button class="btn-recherche-voyage" type="button" (click)="onSearch()">Rechercher</button>
+    </section>
   </div>
 
   <div class="cartes">
     <section class="cartes-info" id="nos-lignes">
       <h2 class="carte-lignes-title">Nos lignes</h2>
       <img src="/assets/img/carte_lignes.png" alt="Carte des lignes" />
-      <button class="btn-voir-lignes">Voir nos lignes</button>
+      <button class="btn-voir-lignes" type="button" (click)="goToLines()">Voir nos lignes</button>
     </section>
 
     <section class="cartes-info" id="prochains-departs">

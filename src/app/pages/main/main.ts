@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 interface City {
   id: string;
@@ -61,6 +62,8 @@ export class Main implements OnInit {
   routes: Route[] = [];
   departureCity = '';
   arrivalCity = '';
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.loadData();
@@ -141,5 +144,18 @@ export class Main implements OnInit {
     if (this.arrivalCity === this.departureCity) {
       this.arrivalCity = '';
     }
+  }
+
+  onSearch(): void {
+    this.router.navigate(['/lignes'], {
+      queryParams: {
+        departure: this.departureCity || null,
+        arrival: this.arrivalCity || null,
+      },
+    });
+  }
+
+  goToLines(): void {
+    this.router.navigate(['/lignes']);
   }
 }

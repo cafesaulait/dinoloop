@@ -1,5 +1,5 @@
 <header class="header">
-    <a class="header-logo-link" href="/main">
+    <a class="header-logo-link" routerLink="/main">
         <div class="header-brand">
             
                 <img class="header-logo" src="/assets/img/dinosaur.svg" alt="Dinoloop logo"/>
@@ -9,11 +9,11 @@
     </a>
 
   <nav class="header-nav">
-    <a class="header-nav-link" href="/main">Accueil</a>
-    <a class="header-nav-link" href="/lignes">Lignes</a>
-    <a class="header-nav-link" href="/horaires">Horaires</a>
-    <a class="header-nav-link" href="/tarifs">Tarifs</a>
-    <a class="header-nav-link" href="/apropos">À propos</a>
+    <a class="header-nav-link" routerLink="/main">Accueil</a>
+    <a class="header-nav-link" routerLink="/lignes">Lignes</a>
+    <a class="header-nav-link" routerLink="/horaires">Horaires</a>
+    <a class="header-nav-link" routerLink="/tarifs">Tarifs</a>
+    <a class="header-nav-link" routerLink="/apropos">À propos</a>
   </nav>
 
   <div class="header-actions">
@@ -22,6 +22,6 @@
       <option value="en">English</option>
     </select>
 
-    <button class="btn-my-account" aria-label="Mon compte">Mon compte</button>
+    <a class="btn-my-account" routerLink="/moncompte" aria-label="Mon compte">Mon compte</a>
   </div>
 </header>

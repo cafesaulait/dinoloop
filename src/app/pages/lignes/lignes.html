@@ -1,4 +1,141 @@
-<main>
-    <h2 class="lignes-title">Nos lignes</h2>
-    <img src="/assets/img/carte_lignes.png" alt="Carte des lignes de Dinoloop">
+<main class="lignes-page">
+  <section class="lignes-hero">
+    <div>
+      <p class="eyebrow">Hyperloop Nouvelle-Calédonie</p>
+      <h2 class="lignes-title">Découvrez les lignes et réservez votre trajet</h2>
+      <p class="lignes-subtitle">
+        Consultez les départs de chaque ville, choisissez votre horaire et ajoutez vos billets au panier.
+      </p>
+    </div>
+    <div class="trip-pill">
+      <span>Trajet sélectionné</span>
+      <strong>{{ selectedTripLabel }}</strong>
+    </div>
+  </section>
+
+  <section class="map-card">
+    <img src="/assets/img/carte_lignes.png" alt="Carte des lignes de Dinoloop" />
+    <div class="map-card-content">
+      <h3>Plan du réseau</h3>
+      <p>Les lignes Ouest, Est, Sud et Nord desservent l’ensemble du territoire avec des trajets rapides et confortables.</p>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="left-column">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Tous les départs</p>
+            <h3>Départs selon les villes</h3>
+          </div>
+          <label class="field">
+            <span>Ville de départ</span>
+            <select [(ngModel)]="departureCity" (change)="onDepartureCityChange()">
+              <option value="">Toutes les villes</option>
+              <option *ngFor="let option of cityOptions" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="departures-list">
+          <article *ngFor="let route of routeOptions" class="departure-card">
+            <div class="departure-head">
+              <div>
+                <h4>{{ cityNameById(route.to) }}</h4>
+                <p>{{ route.line }} • {{ formatDuration(route.durationMinutes) }}</p>
+              </div>
+              <span class="badge">{{ route.distanceKm }} km</span>
+            </div>
+
+            <ul class="schedule-list">
+              <li *ngFor="let schedule of route.schedules">
+                <span>{{ schedule.time }}</span>
+                <span>{{ schedule.availableSeats }} places</span>
+                <span>{{ formatPrice(schedule.prices.secondClass) }}</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="right-column">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Trajet recherché</p>
+            <h3>{{ selectedTripLabel }}</h3>
+          </div>
+        </div>
+
+        <div class="search-summary">
+          <label class="field">
+            <span>Destination</span>
+            <select [(ngModel)]="selectedRouteId" (change)="onRouteChange()">
+              <option *ngFor="let route of routeOptions" [value]="route.id">
+                {{ cityNameById(route.to) }} • {{ route.line }}
+              </option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Horaire</span>
+            <select [(ngModel)]="selectedTime">
+              <option *ngFor="let schedule of selectedRoute?.schedules ?? []" [value]="schedule.time">
+                {{ schedule.time }}
+              </option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Classe</span>
+            <select [(ngModel)]="selectedClass">
+              <option *ngFor="let option of classOptions" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Nombre de billets</span>
+            <input type="number" min="1" max="8" [(ngModel)]="quantity" />
+          </label>
+        </div>
+
+        <div class="price-card">
+          <p>Prix unitaire</p>
+          <strong>{{ formatPrice(selectedPrice) }}</strong>
+          <p>Prix total</p>
+          <strong>{{ formatPrice(selectedPrice * quantity) }}</strong>
+          <button type="button" class="buy-button" (click)="addToCart()">Acheter son billet</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Panier</p>
+            <h3>Vos billets sélectionnés</h3>
+          </div>
+        </div>
+
+        <div *ngIf="cartItems.length; else emptyCart" class="cart-list">
+          <article *ngFor="let item of cartItems" class="cart-item">
+            <div>
+              <h4>{{ item.label }}</h4>
+              <p>{{ item.departureTime }} • {{ classLabel(item.ticketClass) }} • {{ item.quantity }} billet(s)</p>
+            </div>
+            <strong>{{ formatPrice(item.price * item.quantity) }}</strong>
+          </article>
+        </div>
+
+        <ng-template #emptyCart>
+          <p class="empty-cart">Ajoutez un trajet pour créer votre panier.</p>
+        </ng-template>
+
+        <div *ngIf="cartItems.length" class="cart-total">
+          Total : {{ formatPrice(totalCartPrice) }}
+        </div>
+      </section>
+    </div>
+  </section>
 </main>
